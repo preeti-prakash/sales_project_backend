@@ -93,7 +93,7 @@ def create_access_token(data: dict):
 
 # Register route
 @router.post("/register/")
-def register_user(user_data: dict = Body(...), db: bigquery.Client = Depends(get_bigquery_client)):
+async def register_user(user_data: dict = Body(...), db: bigquery.Client = Depends(get_bigquery_client)):
     username = user_data.get("username")
     first_name = user_data.get("first_name")
     last_name = user_data.get("last_name")
@@ -112,7 +112,7 @@ def register_user(user_data: dict = Body(...), db: bigquery.Client = Depends(get
 
 
 @router.post("/token/")
-def login_for_access_token(
+async def login_for_access_token(
     form_data: LoginRequest, 
     db: bigquery.Client = Depends(get_bigquery_client)
 ):
@@ -130,7 +130,7 @@ def login_for_access_token(
     return response
 
 @router.post("/logout/")
-def logout_user():
+async def logout_user():
     response = JSONResponse(
         content={"message": "Logged out successfully"}
     )

@@ -17,6 +17,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
+# cors added
 @app.get("/")
 async def root():
     return {"message": "Welcome to the Sales Project API"}

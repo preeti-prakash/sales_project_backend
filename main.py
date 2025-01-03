@@ -11,11 +11,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow React frontend origin
+    allow_origins=["https://sales-react-application-504211475748.us-central1.run.app"],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE"],  # Necessary HTTP methods
-    allow_headers=["*"],  # Allow all headers
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
 )
+
 
 # cors added
 @app.get("/")

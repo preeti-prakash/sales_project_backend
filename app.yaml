@@ -2,6 +2,6 @@ runtime: python39
 entrypoint: uvicorn main:app --host 0.0.0.0 --port 8080
 
 env_variables:
-  GOOGLE_APPLICATION_CREDENTIALS: "/Users/preetiboddeti/Desktop/sales-bq-servacc.json"
+  GOOGLE_APPLICATION_CREDENTIALS: "./sales-bq-servacc.json"
   PROJECT_ID: "boreal-pride-319909"
   SECRET_KEY: "7ef4489d80197d6f21634966c64a47ef23718874d7d590ae0aff531c60e37a8b"
